@@ -1,8 +1,0 @@
-#virtual environment
-python -m venv .venv
-source .venv/bin/activate
-deactivate
-
-fastapi dev .venv/main.py
-
-https://fastapi.tiangolo.com/virtual-environments/#create-a-virtual-environment
