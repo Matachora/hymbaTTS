@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Stream Player</title>
+</head>
+<body>
+    <h1>Audio Player</h1>
+    <button id="playButton">Play Audio</button>
+    <audio id="audioPlayer" controls></audio>
+
+    <script>
+        const playButton = document.getElementById('playButton');
+        const audioPlayer = document.getElementById('audioPlayer');
+
+        playButton.addEventListener('click', async () => {
+            const filename = 'audio';
+            const audioUrl = `http://127.0.0.1:8000/audio/${filename}`;
+
+            try {
+                const response = await fetch(audioUrl);
+                if (!response.ok) {
+                    throw new Error('Error fetching audio file');
+                }
+
+                const audioBlob = await response.blob();
+                const audioUrl = URL.createObjectURL(audioBlob);
+                audioPlayer.src = audioUrl;
+                audioPlayer.play();
+            } catch (error) {
+                console.error('Error playing audio:', error);
+                alert('An error occurred while playing the audio. Please try again later.');
+            }
+        });
+    </script>
+</body>
+</html>
