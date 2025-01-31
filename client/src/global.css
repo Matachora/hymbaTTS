@@ -11,3 +11,38 @@ header {
     height: 10rem;
     background-color: aqua;
 }
+
+.notascss {
+    /* definir tamaño */
+    width: 100vw;
+    height: 100vh;
+    
+    /* centrarlo */
+    display: flex;
+    /* vertical */
+    flex-direction: column; 
+    /* horizontal */
+    /* flex-direction: row; */
+
+    align-items: center;
+    justify-content: center;
+    
+    /* espacio entre elementos */
+    gap: 10px;
+}
+
+.v {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.h {
+    display: flex;
+    flex-direction: row; 
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
